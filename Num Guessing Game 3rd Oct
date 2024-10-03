@@ -1,0 +1,30 @@
+#include <stdio.h>
+#include <stdlib.h>
+#include <time.h>
+
+int main() {
+    
+    srand(time(0));  
+    int randomNumber = (rand() % 100) + 1;
+    int total_guesses=0;
+    int guessed;
+    
+    do{
+        printf("Enter Number which you guessed  :");
+        scanf("%d",&guessed);
+
+        total_guesses++;
+
+        if(guessed>randomNumber) {
+            printf("Lower number please\n");
+        }
+        else if(guessed < randomNumber){
+            printf("Greater number please\n");
+        }
+
+    }while(guessed!=randomNumber);
+
+    printf("Congratulations ! You guessed the number in %d guesses\n",total_guesses);
+
+    return 0;
+}
